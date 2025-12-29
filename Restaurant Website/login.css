@@ -1,36 +1,181 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Lucida Sans';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-body{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(120deg,#ff9800,#ff5722);
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f2f5;
 }
 
-.login-box{
-  background:white;
-  padding:30px;
-  width:300px;
-  border-radius:10px;
-  text-align:center;
+/* Main Container Card */
+.container {
+  display: flex;
+  width: 900px;
+  height: 600px;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.login-box input{
-  width:100%;
-  padding:10px;
-  margin:10px 0;
+/* --- Left Side: Image Section --- */
+.image-section {
+  flex: 1;
+  background-image: url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 40px;
 }
 
-.login-box button{
-  width:100%;
-  padding:10px;
-  background:#ff9800;
-  border:none;
-  color:white;
+
+.image-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: left;
+}
+
+.content-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.content-overlay p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* --- Right Side: Form Section --- */
+.form-section {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.brand-name {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-title {
+  color: #ff4b2b;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+form {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input Fields Styling */
+.input-field {
+  width: 100%;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.input-field::placeholder {
+  color: #aaa;
+}
+
+/* Main Button Styling */
+.btn-submit {
+  background-color: #ff4b2b;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 75, 43, 0.3);
+}
+
+.btn-submit:hover {
+  background-color: #e04022;
+}
+
+/* Footer Links */
+.login-link {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.login-link a {
+  color: #ff4b2b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Social Icons Area */
+.social-login {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.social-btn.facebook {
+  background-color: #e7f0ff;
+  color: #1877f2;
+}
+
+.social-btn.google {
+  background-color: #fff0ee;
+  color: #ea4335;
+}
+
+.social-btn:hover {
+  transform: scale(1.1);
 }
